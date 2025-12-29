@@ -11,7 +11,7 @@ CREATE TABLE customer (
   customer_email VARCHAR(55)
 );
 
--- Insert customers (original + extra)
+-- Insert customers
 INSERT INTO customer VALUES
 (101, "bhanu", "bhanu2@gmail.com"),
 (102, "raju", "rajesh34@gmail.com"),
@@ -56,7 +56,7 @@ CREATE TABLE product (
   product_name VARCHAR(50)
 );
 
--- Insert products (original + extra)
+-- Insert products 
 INSERT INTO product VALUES
 (1, "mrfBat"),
 (2, "KIT"),
@@ -102,7 +102,7 @@ CREATE TABLE order_details (
   order_date DATE
 );
 
--- Insert orders (original + extra)
+-- Insert orders 
 INSERT INTO order_details VALUES
 (500, 101, 1, "2025-11-20"),
 (501, 102, 2, "2025-11-22"),
