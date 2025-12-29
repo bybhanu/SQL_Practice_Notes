@@ -1,0 +1,143 @@
+-- Create database
+CREATE DATABASE flipkart;
+USE flipkart;
+
+-- =========================
+-- CUSTOMER TABLE
+-- =========================
+CREATE TABLE customer (
+  customer_id INT,
+  customer_name VARCHAR(50),
+  customer_email VARCHAR(55)
+);
+
+-- Insert customers (original + extra)
+INSERT INTO customer VALUES
+(101, "bhanu", "bhanu2@gmail.com"),
+(102, "raju", "rajesh34@gmail.com"),
+(103, "chandra", "chandra24@gmail.com"),
+(104, "rohit", "rohit45@gmail.com"),
+(104, "virat", "virat18@gmail.com"),
+(105, "dhoni", "dhoni7@gmail.com"),
+(106, "kiran", "kiran09@gmail.com"),
+(107, "sruthi", "sruthi11@gmail.com"),
+(108, "mahesh", "mahesh23@gmail.com"),
+(109, "neha", "neha29@gmail.com"),
+(110, "tarun", "tarun46@gmail.com"),
+(111, "pavan", "pavan91@gmail.com"),
+(112, "teja", "teja92@gmail.com"),
+(113, "meena", "meena93@gmail.com"),
+(114, "swathi", "swathi94@gmail.com"),
+(115, "naveen", "naveen95@gmail.com"),
+(116, "varun", "varun96@gmail.com"),
+(117, "harsha", "harsha97@gmail.com"),
+(118, "ramya", "ramya98@gmail.com"),
+(119, "anil", "anil99@gmail.com"),
+(120, "kavya", "kavya100@gmail.com"),
+(121, "sunny", "sunny11@gmail.com"),
+(122, "nikhil", "nikhil12@gmail.com"),
+(123, "aravind", "aravind13@gmail.com"),
+(124, "divya", "divya14@gmail.com"),
+(125, "rekha", "rekha15@gmail.com"),
+(126, "sanjay", "sanjay16@gmail.com"),
+(127, "rahul", "rahul17@gmail.com"),
+(128, "ajay", "ajay18@gmail.com"),
+(129, "sahana", "sahana19@gmail.com"),
+(130, "jyothi", "jyothi20@gmail.com");
+
+-- View customers
+SELECT * FROM customer;
+
+-- =========================
+-- PRODUCT TABLE
+-- =========================
+CREATE TABLE product (
+  product_id INT,
+  product_name VARCHAR(50)
+);
+
+-- Insert products (original + extra)
+INSERT INTO product VALUES
+(1, "mrfBat"),
+(2, "KIT"),
+(3, "Ball"),
+(4, "SGBAT"),
+(5, "mrfBat"),
+(6, "AdidasShoe"),
+(7, "BoatEarphones"),
+(8, "PocoMobile"),
+(9, "RealmeMobile"),
+(10, "LaptopBag"),
+(11, "SmartWatch"),
+(12, "BluetoothSpeaker"),
+(13, "PowerBank"),
+(14, "WirelessMouse"),
+(15, "Keyboard"),
+(16, "LEDLight"),
+(17, "Charger"),
+(18, "Backpack"),
+(19, "Pendrive"),
+(20, "MemoryCard"),
+(21, "Tablet"),
+(22, "AirConditioner"),
+(23, "Refrigerator"),
+(24, "MicrowaveOven"),
+(25, "TV"),
+(26, "DSLR"),
+(27, "Tripod"),
+(28, "GamingChair"),
+(29, "Router"),
+(30, "Earbuds");
+
+-- View products
+SELECT * FROM product;
+
+-- =========================
+-- ORDER DETAILS TABLE
+-- =========================
+CREATE TABLE order_details (
+  order_id INT,
+  customer_id INT,
+  product_id INT,
+  order_date DATE
+);
+
+-- Insert orders (original + extra)
+INSERT INTO order_details VALUES
+(500, 101, 1, "2025-11-20"),
+(501, 102, 2, "2025-11-22"),
+(500, 103, 3, "2025-11-23"),
+(500, 104, 4, "2025-11-24"),
+(502, 101, 2, "2025-11-25"),
+(503, 102, 1, "2025-11-26"),
+(504, 103, 7, "2025-11-27"),
+(505, 104, 11, "2025-11-28"),
+(506, 105, 3, "2025-11-29"),
+(507, 106, 8, "2025-11-30"),
+(508, 107, 6, "2025-12-01"),
+(509, 108, 5, "2025-12-02"),
+(510, 109, 10, "2025-12-03"),
+(511, 110, 9, "2025-12-04"),
+(512, 111, 12, "2025-12-05"),
+(513, 112, 13, "2025-12-06"),
+(514, 113, 14, "2025-12-07"),
+(515, 114, 15, "2025-12-08"),
+(516, 115, 16, "2025-12-09"),
+(517, 116, 17, "2025-12-10"),
+(518, 117, 18, "2025-12-11"),
+(519, 118, 19, "2025-12-12"),
+(520, 119, 20, "2025-12-13"),
+(521, 120, 21, "2025-12-14"),
+(522, 121, 22, "2025-12-15"),
+(523, 122, 23, "2025-12-16"),
+(524, 123, 24, "2025-12-17"),
+(525, 124, 25, "2025-12-18"),
+(526, 125, 26, "2025-12-19"),
+(527, 126, 27, "2025-12-20"),
+(528, 127, 28, "2025-12-21"),
+(529, 128, 29, "2025-12-22"),
+(530, 129, 30, "2025-12-23"),
+(531, 130, 11, "2025-12-24");
+
+-- View orders
+SELECT * FROM order_details;
