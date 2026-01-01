@@ -1,0 +1,55 @@
+-- ===============================
+-- SQL WHERE Clause Examples
+-- Author: ByBhanu
+-- ===============================
+
+-- Get customer name as FullName where id = 112
+select customer_name as FullName 
+from customer 
+where customer_id = 112;
+
+-- Get complete row where id = 112
+select * 
+from customer 
+where customer_id = 112;
+
+-- Find customer by name
+select * 
+from customer 
+where customer_name = "bhanu";
+
+-- Find customer by email
+select * 
+from customer 
+where customer_email = 'bhanu2@gmail.com';
+
+-- AND condition example
+-- Returns data only if BOTH conditions are TRUE
+select * 
+from customer 
+where customer_id = 101 
+and customer_name = "bhanu";
+
+-- OR condition example
+-- Returns data if ANY ONE condition is TRUE
+select * 
+from customer 
+where customer_id = 112 
+or customer_name = "bhanu";
+
+-- BETWEEN example (range search)
+select * 
+from customer 
+where customer_id between 112 and 115;
+
+-- BETWEEN example on product table
+select * 
+from product 
+where product_id between 1 and 10;
+
+-- --------------------------------
+-- Logical Operator Notes
+-- --------------------------------
+-- AND     → True only if ALL conditions are true
+-- OR      → True if AT LEAST one condition is true
+-- BETWEEN → Use for range-based filtering
