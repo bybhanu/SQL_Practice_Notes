@@ -1,0 +1,24 @@
+-- Show all data from table
+SELECT * FROM customer;
+
+-- Show specific columns
+SELECT customer_name, customer_email, customer_id FROM customer;
+
+-- Rename column using AS (alias)
+SELECT customer_email AS Email FROM customer;
+
+-- Alias without AS keyword
+SELECT customer_email Email2 FROM customer;
+
+-- Multiple aliases
+SELECT 
+  customer_id AS ID, 
+  customer_name AS fullName, 
+  customer_email AS Email 
+FROM customer;
+
+-- Remove duplicate rows
+SELECT DISTINCT * FROM customer;
+
+-- Get first 3 unique rows
+SELECT DISTINCT * FROM customer LIMIT 3;
