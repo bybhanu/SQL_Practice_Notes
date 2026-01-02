@@ -1,0 +1,67 @@
+-- AGGREGATE FUNCTIONS IN SQL
+-- Count() | Sum() | Min() | Max() | Avg()
+
+-- View all data
+select * from order_details;
+
+-- BASIC AGGREGATE FUNCTIONS
+
+select count(*) as Total_Orders 
+from order_details;
+
+select min(order_date) as First_Order_Date
+from order_details;
+
+select max(order_date) as Last_Order_Date
+from order_details;
+
+select avg(order_id) as Average_Order_ID
+from order_details;
+
+select sum(order_id) as Sum_of_OrderIDs
+from order_details;
+
+
+-- AGGREGATE FUNCTIONS WITH GROUP BY
+
+select customer_id, count(*) as TotalOrders
+from order_details
+group by customer_id;
+
+select customer_id, sum(order_id) as TotalOrders
+from order_details
+group by customer_id;
+
+select customer_id, min(order_id) as MinOrderID
+from order_details
+group by customer_id;
+
+select customer_id, max(order_id) as MaxOrderID
+from order_details
+group by customer_id;
+
+select customer_id, avg(order_id) as AverageOrderID
+from order_details
+group by customer_id;
+
+
+-- GROUP BY WITH HAVING (filtering groups)
+
+select customer_id, min(order_date) as First_Order, max(order_date) as Last_Order
+from order_details
+group by customer_id
+having count(*) > 1;   -- customers with more than 1 order
+
+select customer_id, avg(order_id) as AverageOrderID
+from order_details
+group by customer_id
+having count(*) > 2;   -- customers with more than 2 orders
+
+
+-- IMPORTANT NOTES
+-- where  : filters ROWS before grouping
+-- having : filters GROUPS after grouping
+
+-- Example:
+-- where  customer_id = 101           (row level)
+-- having count(*) > 1                (group level)
