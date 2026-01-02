@@ -1,0 +1,42 @@
+-- Basic table data
+select * from order_details;
+
+-- Selecting multiple columns without GROUP BY
+select customer_id, product_id from order_details;
+
+-- GROUP BY on single column
+select customer_id 
+from order_details 
+group by customer_id;
+
+-- DISTINCT gives the same output as GROUP BY (for single column)
+select distinct customer_id from order_details;
+
+-- ❌ This may cause ERROR in MySQL (ONLY_FULL_GROUP_BY mode)
+select customer_id, product_id 
+from order_details 
+group by customer_id;
+
+-- ✔️ Correct way when using GROUP BY on multiple columns
+select customer_id, product_id
+from order_details
+group by customer_id, product_id;
+
+-------------------------------------------------------------
+-- 🛑 ERROR NOTE
+-- Error Code: 1055
+-- Expression of SELECT list is not in GROUP BY clause
+-- and contains non-aggregated column
+-- This happens because MySQL is in ONLY_FULL_GROUP_BY mode
+-------------------------------------------------------------
+
+-- ✅ Simple explanation of the error:
+
+-- When ONLY_FULL_GROUP_BY is ON:
+-- Every column in SELECT must be:
+--  1) present in GROUP BY
+--      OR
+--  2) used inside an aggregate function
+--     like COUNT(), SUM(), MIN(), MAX(), AVG()
+
+
