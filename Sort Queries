@@ -1,0 +1,15 @@
+-- Sort customer names in ascending order (A to Z)
+select * from customer 
+order by customer_name asc;
+
+-- Sort customer names in descending order (Z to A)
+select * from customer 
+order by customer_name desc;
+
+-- Sort by customer_id first, then by name
+select * from customer 
+order by customer_id, customer_name;
+
+-- Sort by multiple columns
+select * from customer 
+order by customer_name, customer_id, customer_email;
